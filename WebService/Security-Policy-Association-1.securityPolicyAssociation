@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BWSharedResource xmlns:inLine="http://xmlns.example.com/1456312316426">
+    <name>Security-Policy-Association-1</name>
+    <resourceType>ws.security.policy.association.resource</resourceType>
+    <config>
+        <applyTo>/WebService/Process Definition.process/SOAPRequestReply</applyTo>
+        <systemSecuritySubject>/WebService/Process Definition.process/PortTypeEndpoint0/Operation</systemSecuritySubject>
+        <inbound>
+            <selectSignatureParts/>
+            <selectEncryptionParts/>
+        </inbound>
+        <inboundMessagePolicy/>
+        <outbound>
+            <selectSignatureParts/>
+            <selectEncryptionParts/>
+        </outbound>
+        <outboundMessagePolicy>/WebService/Security-Policy-1.securityPolicy</outboundMessagePolicy>
+    </config>
+</BWSharedResource>

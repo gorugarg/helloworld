@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pfx="http://xmlns.example.com/1456312316426">
+    <wsdl:import namespace="http://xmlns.example.com/1456312316426" location="/WebService/Concrete WSDl/WSDL.wsdl"/>
+    <pd:name>WebService/Process Definition.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startX>27</pd:startX>
+    <pd:startY>35</pd:startY>
+    <pd:returnBindings/>
+    <pd:endName>End</pd:endName>
+    <pd:endX>423</pd:endX>
+    <pd:endY>35</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1456312776976</pd:targetNamespace>
+    <pd:activity name="SOAPRequestReply">
+        <pd:type>com.tibco.plugin.soap.SOAPSendReceiveActivity</pd:type>
+        <pd:resourceType>ae.activities.SOAPSendReceiveUI</pd:resourceType>
+        <pd:x>221</pd:x>
+        <pd:y>35</pd:y>
+        <config>
+            <timeout>0</timeout>
+            <soapAttachmentStyle>SwA</soapAttachmentStyle>
+            <timeoutType>Seconds</timeoutType>
+            <service>pfx:WSDL-service0</service>
+            <servicePort>PortTypeEndpoint0</servicePort>
+            <operation>Operation</operation>
+            <soapAction>/WebService/WSDL-service0.serviceagent/PortTypeEndpoint0/Operation</soapAction>
+            <endpointURL>http://localhost:4321/WebService/WSDL-service0.serviceagent/PortTypeEndpoint0</endpointURL>
+            <authScheme>BASIC</authScheme>
+            <useProxy>false</useProxy>
+            <requireBasicAuth>true</requireBasicAuth>
+            <basicHttpAuthIdentity>/WebService/Identity.id</basicHttpAuthIdentity>
+        </config>
+        <pd:inputBindings>
+            <inputMessage>
+                <Request>
+                    <xsl:value-of select="&quot;hi&quot;"/>
+                </Request>
+                <headers>
+                    <Header.UserName>
+                        <UserName>
+                            <xsl:value-of select="'tibco'"/>
+                        </UserName>
+                    </Header.UserName>
+                    <Header.Password>
+                        <Password>
+                            <xsl:value-of select="'tibco'"/>
+                        </Password>
+                    </Header.Password>
+                </headers>
+            </inputMessage>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>SOAPRequestReply</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>SOAPRequestReply</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

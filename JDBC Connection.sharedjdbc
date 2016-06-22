@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BWSharedResource>
+    <name>JDBC Connection</name>
+    <resourceType>ae.shared.JDBCSharedResource</resourceType>
+    <config>
+        <driver>tibcosoftwareinc.jdbc.oracle.OracleDriver</driver>
+        <maxConnections>10</maxConnections>
+        <loginTimeout>0</loginTimeout>
+        <connectionType>XA</connectionType>
+        <UseSharedJndiConfig>false</UseSharedJndiConfig>
+        <location>jdbc:oracle:thin:@localhost:1521:xe</location>
+        <password>#!hBBpTJMwNReowpg2zdfErus2avUdqdwziJIALNRARE8=</password>
+        <user>system</user>
+        <xaDsClass>oracle.jdbc.xa.client.OracleXADataSource</xaDsClass>
+    </config>
+</BWSharedResource>

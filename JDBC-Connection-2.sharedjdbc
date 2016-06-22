@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BWSharedResource>
+    <name>JDBC-Connection-2</name>
+    <resourceType>ae.shared.JDBCSharedResource</resourceType>
+    <config>
+        <driver>oracle.jdbc.OracleDriver</driver>
+        <maxConnections>10</maxConnections>
+        <loginTimeout>0</loginTimeout>
+        <connectionType>JDBC</connectionType>
+        <UseSharedJndiConfig>false</UseSharedJndiConfig>
+        <location>jdbc:oracle:thin:@localhost:1521:XE</location>
+        <user>sys as sysdba</user>
+        <password>#!UoGGjrsG8le9/U9NkuM/2/cSVCzhv12f8jy9eEnVF4Y=</password>
+    </config>
+</BWSharedResource>

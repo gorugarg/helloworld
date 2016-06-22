@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pfx="http://www.tibco.com/schemas/Lenovo sw/Mapping Attributes/Schema.xsd">
+    <xsd:import namespace="http://www.tibco.com/schemas/Lenovo sw/Mapping Attributes/Schema.xsd" schemaLocation="/Mapping Attributes/Schema.xsd"/>
+    <pd:name>Mapping Attributes/Process Definition.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType ref="pfx:messages"/>
+    <pd:startX>62</pd:startX>
+    <pd:startY>63</pd:startY>
+    <pd:returnBindings/>
+    <pd:endName>End</pd:endName>
+    <pd:endX>693</pd:endX>
+    <pd:endY>61</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1457424913686</pd:targetNamespace>
+    <pd:activity name="Map Data">
+        <pd:type>com.tibco.plugin.mapper.MapperActivity</pd:type>
+        <pd:resourceType>ae.activities.MapperActivity</pd:resourceType>
+        <pd:x>331</pd:x>
+        <pd:y>72</pd:y>
+        <config>
+            <element ref="pfx:messages"/>
+        </config>
+        <pd:inputBindings>
+            <pfx:messages>
+                <xsl:for-each select="$Start/pfx:messages/pfx:note[string-length(@message_id)=0]">
+                    <pfx:note>
+                        <xsl:choose>
+                            <xsl:when test="pfx:to/@age>35">
+                                <pfx:to>
+                                    <xsl:value-of select="pfx:to"/>
+                                </pfx:to>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <pfx:to>
+                                    <xsl:value-of select="'Age is not mentioned'"/>
+                                </pfx:to>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                        <pfx:from>
+                            <xsl:value-of select="pfx:from"/>
+                        </pfx:from>
+                    </pfx:note>
+                </xsl:for-each>
+            </pfx:messages>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Map Data</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Map Data</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

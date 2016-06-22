@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Repository:repository xmlns:Repository="http://www.tibco.com/xmlns/repo/types/2002">
+    <enterpriseArchive>
+        <sharedArchive name="Shared Archive">
+            <resourceType>shared.archive.resource</resourceType>
+            <authorProperty>sk</authorProperty>
+        </sharedArchive>
+        <processArchive name="Process Archive">
+            <resourceType>process.archive.resource</resourceType>
+            <authorProperty>sk</authorProperty>
+            <processProperty>/AdapterPublisherMode.process</processProperty>
+        </processArchive>
+        <adapterArchive name="ActiveDatabaseAdapterConfiguration">
+            <resourceType>adapter.archive.resource</resourceType>
+            <authorProperty>sk</authorProperty>
+            <sdkVersion>6.3.0</sdkVersion>
+            <wantsManualSdkVersionUpdates>true</wantsManualSdkVersionUpdates>
+            <adapterReference>/ActiveDatabaseAdapterConfiguration.adb#adapter.ActiveDatabaseAdapterConfiguration</adapterReference>
+            <softwareTypeProperty>adb</softwareTypeProperty>
+        </adapterArchive>
+        <versionProperty>3</versionProperty>
+        <authorProperty>sk</authorProperty>
+        <addServiceSettableGvars>true</addServiceSettableGvars>
+        <name>Lenovo sw</name>
+        <designer>
+            <lockedProperties>
+                <locked>
+                    <resource>/ActiveDatabaseAdapterConfiguration</resource>
+                    <properties>sdkVersion</properties>
+                </locked>
+            </lockedProperties>
+        </designer>
+        <fileLocationProperty>C:\Users\sk\Lenovo sw.ear</fileLocationProperty>
+    </enterpriseArchive>
+</Repository:repository>

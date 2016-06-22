@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://xmlns.example.com/1456310518219" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.example.com/1456310518219">
+    <message name="Input_Message">
+        <part name="Request" type="xsd:string"/>
+    </message>
+    <message name="Output_Message">
+        <part name="Response" type="xsd:string"/>
+    </message>
+    <message name="ContextHeader">
+        <part name="UserName" type="xsd:string"/>
+        <part name="Password" type="xsd:string"/>
+    </message>
+    <portType name="PortType">
+        <operation name="Operation">
+            <input message="tns:Input_Message"/>
+            <output message="tns:Output_Message"/>
+        </operation>
+    </portType>
+</definitions>

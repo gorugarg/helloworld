@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BWSharedResource xmlns:inLine="http://xmlns.example.com/1456312316426">
+    <name>Security Policy Association</name>
+    <resourceType>ws.security.policy.association.resource</resourceType>
+    <config>
+        <applyTo>/WebService/WSDL-service0/PortTypeEndpoint0/Operation</applyTo>
+        <systemSecuritySubject>/WebService/WSDL-service0/PortTypeEndpoint0/Operation</systemSecuritySubject>
+        <inbound>
+            <selectSignatureParts/>
+            <selectEncryptionParts/>
+        </inbound>
+        <inboundMessagePolicy>/WebService/Security Policy.securityPolicy</inboundMessagePolicy>
+    </config>
+</BWSharedResource>

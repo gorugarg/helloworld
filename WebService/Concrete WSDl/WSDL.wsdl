@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created by TIBCO WSDL-->
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://xmlns.example.com/1456312316426" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="Untitled" targetNamespace="http://xmlns.example.com/1456312316426">
+    <wsdl:types/>
+    <wsdl:service name="WSDL-service0">
+        <wsdl:port binding="tns:PortTypeEndpoint0Binding" name="PortTypeEndpoint0">
+            <soap:address location="http://localhost:4321/WebService/WSDL-service0.serviceagent/PortTypeEndpoint0"/>
+        </wsdl:port>
+    </wsdl:service>
+    <wsdl:portType name="PortType">
+        <wsdl:operation name="Operation">
+            <wsdl:input message="tns:Input_Message"/>
+            <wsdl:output message="tns:Output_Message"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="PortTypeEndpoint0Binding" type="tns:PortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="Operation">
+            <soap:operation soapAction="/WebService/WSDL-service0.serviceagent/PortTypeEndpoint0/Operation" style="document"/>
+            <wsdl:input>
+                <soap:body parts="Request" use="literal"/>
+                <soap:header message="tns:ContextHeader" part="UserName" use="literal"/>
+                <soap:header message="tns:ContextHeader" part="Password" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="Response" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:message name="ContextHeader">
+        <wsdl:part name="UserName" type="xs:string"/>
+        <wsdl:part name="Password" type="xs:string"/>
+    </wsdl:message>
+    <wsdl:message name="Input_Message">
+        <wsdl:part name="Request" type="xs:string"/>
+    </wsdl:message>
+    <wsdl:message name="Output_Message">
+        <wsdl:part name="Response" type="xs:string"/>
+    </wsdl:message>
+</wsdl:definitions>

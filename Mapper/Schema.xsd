@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://www.tibco.com/schemas/Lenovo sw/Mapper/Schema.xsd"
+	 targetNamespace="http://www.tibco.com/schemas/Lenovo sw/Mapper/Schema.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="inventory">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="drink"/>
+				<xs:element ref="snack"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="drink">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="lemonade"/>
+				<xs:element ref="pop"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="snack">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="chips"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="lemonade">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="price"/>
+				<xs:element ref="amount"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="pop">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="price"/>
+				<xs:element ref="amount"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="chips">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="price"/>
+				<xs:element ref="amount"/>
+				<xs:element ref="calories"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="price" type="xs:string"/>
+	<xs:element name="amount" type="xs:string"/>
+	<xs:element name="calories" type="xs:string"/>
+</xs:schema>

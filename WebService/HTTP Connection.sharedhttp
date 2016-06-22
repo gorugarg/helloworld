@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:httpSharedResource xmlns:ns0="www.tibco.com/shared/HTTPConnection">
+    <config>
+        <Host>localhost</Host>
+        <serverType>HttpComponent</serverType>
+        <Port>4321</Port>
+        <useSsl>false</useSsl>
+        <ns1:ssl xmlns:ns1="http://www.tibco.com/xmlns/aemeta/services/2002">
+            <ns1:strongCipherSuitesOnly>true</ns1:strongCipherSuitesOnly>
+            <ns1:identity isRef="true">/Identity.id</ns1:identity>
+        </ns1:ssl>
+        <HttpConnectionProperties>
+            <row>
+                <PropertyName>uriEncoding</PropertyName>
+                <PropertyValue/>
+                <PropertyDefaultValue/>
+            </row>
+            <row>
+                <PropertyName>compressableMimeType</PropertyName>
+                <PropertyValue/>
+                <PropertyDefaultValue>text/html,text/xml,text/plain</PropertyDefaultValue>
+            </row>
+            <row>
+                <PropertyName>compression</PropertyName>
+                <PropertyValue/>
+                <PropertyDefaultValue>off</PropertyDefaultValue>
+            </row>
+            <row>
+                <PropertyName>connectionTimeOut (ms)</PropertyName>
+                <PropertyValue/>
+                <PropertyDefaultValue>60000</PropertyDefaultValue>
+            </row>
+        </HttpConnectionProperties>
+    </config>
+</ns0:httpSharedResource>
